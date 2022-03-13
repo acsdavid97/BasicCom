@@ -1,0 +1,42 @@
+// AtlSimpleServer.idl : IDL source for AtlSimpleServer
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AtlSimpleServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+	object,
+	uuid(ab332f20-7d60-4110-a682-92b095d4a4b8),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMyObject : IDispatch
+{
+	[helpstring("my first method")] HRESULT GetValue([out, retval] int* Value);
+	[helpstring("second method")] HRESULT SetValue([in] int Value);
+};
+
+
+[
+	uuid(aa42b5da-da22-4210-8641-dc58cae2da5c),
+	version(1.0),
+]
+library AtlSimpleServerLib
+{
+
+	[
+		uuid(579bca31-7ab8-4503-a43d-908853213360)
+	]
+	coclass MyObject
+	{
+		[default] interface IMyObject;
+	};
+};
+
+import "shobjidl.idl";
+import "shobjidl.idl";

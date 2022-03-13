@@ -1,0 +1,4 @@
+LIBRARY BasicComServer
+    EXPORTS DllGetClassObject PRIVATE
+    EXPORTS DllCanUnloadNow PRIVATE
+    EXPORTS DllRegisterServer PRIVATE
